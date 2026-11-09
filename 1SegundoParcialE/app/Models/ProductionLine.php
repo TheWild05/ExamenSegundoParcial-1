@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductionLine extends Model
 {
+    
     /** @var array */
     protected $fillable = [
         'name',
@@ -19,4 +20,9 @@ class ProductionLine extends Model
         'updated_at' => 'datetime',
     ];
     
+
+    function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
